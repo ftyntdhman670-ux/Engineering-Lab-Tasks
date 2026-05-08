@@ -28,6 +28,16 @@ int main() {
         // التقاط الخطأ وطباعته (Exception Handling)
         std::cerr << "Caught Exception: " << e.what() << std::endl;
     }
+    std::cout << "\n--- Testing Additional Requirements ---" << std::endl;
+
+    // 1. تجربة هرمية Shape باستخدام unique_ptr (مطلب أساسي)
+    std::unique_ptr<Shape> myShape = std::make_unique<Circle>();
+    myShape->draw();
+
+    // 2. تجربة الـ Template Stack (مطلب أساسي)
+    Stack<std::string> logStack;
+    logStack.push("System Started Successfully");
+    std::cout << "Latest Log: " << logStack.top() << std::endl;
 
     return 0;
 }

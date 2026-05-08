@@ -31,5 +31,29 @@ public:
         return os;
     }
 };
+// 1. تطبيق هرمية Shape (مطلب: abstract base + derived مع unique_ptr)
+class Shape {
+public:
+    virtual void draw() const = 0; // دالة افتراضية بحتة تجعل الصنف مجرداً
+    virtual ~Shape() = default;
+};
+
+class Circle : public Shape {
+public:
+    void draw() const override {
+        std::cout << "Drawing a Circle for the Library Logo!" << std::endl;
+    }
+};
+
+// 2. تطبيق Class Template (مطلب: Stack<T> مخصصة)
+template <typename T>
+class Stack {
+private:
+    std::vector<T> elements;
+public:
+    void push(T const& elem) { elements.push_back(elem); }
+    void pop() { if (!elements.empty()) elements.pop_back(); }
+    T top() const { return elements.back(); }
+};
 
 #endif
