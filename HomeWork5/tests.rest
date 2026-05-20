@@ -1,0 +1,28 @@
+### 1. جلب جميع الأسماء
+GET http://localhost:3001/api/persons
+
+###
+
+### 2. جلب اسم محدد موجود (رقم 2)
+GET http://localhost:3001/api/persons/2
+
+###
+
+### 3. جلب اسم برقم غير موجود (للتأكد من الـ 404)
+GET http://localhost:3001/api/persons/99
+
+###
+
+### 4. حذف اسم محدد (مثلاً حذف رقم 1)
+DELETE http://localhost:3001/api/persons/1
+
+###
+
+### 5. إضافة اسم جديد بالكامل (POST)
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "name": "Fatina Dahman",
+    "number": "099-123456"
+}
